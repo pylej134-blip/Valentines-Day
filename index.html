@@ -12,21 +12,38 @@
       margin: 0;
       overflow: hidden;
     }
+
     h1 {
-      margin-top: 100px;
+      margin-top: 50px;
+      font-size: 2em;
+      color: #ff4d6d;
     }
+
+    img {
+      width: 200px;
+      margin: 20px auto;
+      display: block;
+    }
+
     button {
       font-size: 18px;
       padding: 14px 28px;
       border-radius: 10px;
       border: none;
       cursor: pointer;
+      transition: transform 0.2s;
     }
+
     #yes {
       background-color: #ff4d6d;
       color: white;
       margin-right: 20px;
     }
+
+    #yes:hover {
+      transform: scale(1.1);
+    }
+
     #no {
       background-color: #aaa;
       position: absolute;
@@ -36,12 +53,21 @@
   </style>
 </head>
 <body>
-  <h1>Will you be my Valentine Tay? 💘</h1>
-  <button id="yes" onclick="alert('YAY!!! 💖 I love you so much and cannot wait to spend it with you!')">YES 💖</button>
+  <h1>Will you be my Valentine, Tay? 💘</h1>
+
+  <!-- Add your image here, upload heart.png to repo -->
+  <img src="heart.png" alt="Heart">
+
+  <button id="yes" onclick="alert('YAY!!! 💖 I love you so much and cannot wait to spend it with you!')">
+    YES 💖
+  </button>
+
   <button id="no">NO 😢</button>
 
   <script>
     const noBtn = document.getElementById("no");
+
+    // Move NO button randomly when hovered
     noBtn.addEventListener("mouseover", () => {
       const x = Math.random() * (window.innerWidth - 120);
       const y = Math.random() * (window.innerHeight - 60);
